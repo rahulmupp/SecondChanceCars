@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
     <link rel="stylesheet" href="/css/catalog.css" />
   </head>
   <body>
@@ -28,7 +32,11 @@
 
     <section class="popular" id="popular">
       <h1 class="popular-heading">Available <span>Cars</span></h1>
-      <div class="cards">
+      <div class="search-wrapper">
+        <i class="bx bx-search"></i>
+        <input id="search" placeholder="Search Cars" onkeyup="search()" />
+      </div>
+      <div id="card-container">
         <div class="card card1">
           <div class="card-row">
             <img
@@ -73,10 +81,7 @@
             >
           </div>
         </div>
-      </div>
-    </section>
-    <section class="popular" id="popular">
-      <div class="cards">
+
         <div class="card card1">
           <div class="card-row">
             <img
@@ -115,10 +120,7 @@
             <a class="view-more" id="myBtn">View more!</a>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="popular" id="popular">
-      <div class="cards">
+
         <div class="card card1">
           <div class="card-row">
             <img
@@ -155,10 +157,7 @@
             <a class="view-more" id="myBtn">View more!</a>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="popular" id="popular">
-      <div class="cards">
+
         <div class="card card1">
           <div class="card-row">
             <img
@@ -193,10 +192,7 @@
             <a class="view-more" id="myBtn">View more!</a>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="popular" id="popular">
-      <div class="cards">
+
         <div class="card card1">
           <div class="card-row">
             <img src="/images/2015-f150-xlt/1.png" alt="2016 Ford F150 XLT" />
@@ -226,6 +222,6 @@
         </div>
       </div>
     </section>
-    <script src="gallery.js"></script>
+    <script src="gallery.js" defer></script>
   </body>
 </html>
