@@ -1,0 +1,498 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-padding-top: 1rem;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #1b9cfc;
+  --text-color: #020102;
+}
+
+/* NAVIGATION */
+
+.navbar-main-navbar {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.815);
+  top: 0;
+  width: 100vw;
+  height: 50px;
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.links-right {
+  display: flex;
+  gap: 30px;
+}
+
+.links-right .navbar-link {
+  margin: 0;
+  text-decoration: none;
+  padding: 30px;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.4s;
+}
+
+.navbar-link:hover {
+  cursor: pointer;
+  color: var(--main-color);
+  transition: 0.3s;
+}
+
+.navbar-logo {
+  margin-left: 2em;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar-dashboard-btn {
+  margin-right: 2em;
+  border-radius: 11px;
+  border-color: transparent;
+  color: #000;
+  font-size: 18px;
+  padding: 0 10px;
+  background-color: #fff;
+  transition: all 0.2s;
+}
+
+.navbar-dashboard-btn:hover {
+  background: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* LANDING */
+
+.landing {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), #000),
+    url("/image/sell-car.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center left;
+  display: flex;
+  justify-content: center;
+}
+
+.landing-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8em;
+}
+
+.landing-text h1 {
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+.landing-text span {
+  color: var(--main-color);
+}
+
+.landing-desc {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin: 0.5rem 0 1.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  padding: 10px 22px;
+  background: var(--main-color);
+  color: #fff;
+  font-weight: 400px;
+  border-radius: 15px;
+  transition: 0.3s ease-in-out;
+  border: 3px solid var(--main-color);
+}
+
+.btn:hover {
+  background: #1682d5;
+  cursor: pointer;
+}
+
+#ghost {
+  background-color: transparent;
+  color: var(--main-color);
+  border: 3px solid var(--main-color);
+}
+
+#ghost:hover {
+  background-color: var(--main-color);
+  border: 3px solid #1682d5;
+  color: #fff;
+}
+
+.home {
+  margin-right: 2em;
+}
+
+/* PROCESS */
+
+.section-heading {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  font-size: 3.5rem;
+  color: #000;
+}
+
+.section-heading span {
+  position: relative;
+  z-index: 0;
+}
+
+.section-heading span::before {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--main-color);
+  clip-path: polygon(0 90%, 100% 80%, 100% 100%, 0% 100%);
+}
+
+.process-cards {
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+  margin-bottom: 3em;
+}
+
+.process-card {
+  background: #eee;
+  width: 300px;
+  padding: 1.3em;
+  border-top: 4px solid var(--main-color);
+}
+
+.process-card i {
+  color: var(--main-color);
+  font-size: 2.3em;
+  margin-bottom: 0.3em;
+}
+
+.process-card h2 {
+  font-size: 1.3em;
+  margin-bottom: 0.3em;
+}
+
+.process-card p {
+  color: rgb(132, 132, 132);
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.process-card:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.process-card:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+/* APPOINTMENT */
+
+.appointment {
+  background: #eee;
+}
+
+.appointment .contact-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.appointment .contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  width: 800px;
+}
+
+.appointment .contact-row form {
+  flex: 1 1 42rem;
+  padding: 2rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background: #fff;
+  text-align: center;
+}
+
+.appointment .contact-row form h3 {
+  font-size: 2rem;
+}
+
+.appointment .contact-row form .box {
+  margin: 0.7rem 0;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid silver;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.appointment .contact-row form .box:focus {
+  border-bottom: 2px solid var(--main-color);
+  outline: none;
+  transition: 0.5s;
+}
+
+.appointment .contact-row form input[type="date"] {
+  color: #777;
+}
+
+.appointment .contact-row form textarea {
+  height: 15rem;
+  resize: none;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--main-color);
+  color: #000;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+}
+
+.contact-btn:hover {
+  background: #0977ca;
+  transition: 0.3s ease-in-out;
+}
+
+/* BRING */
+
+.bring-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.bring-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  gap: 4em;
+}
+
+.bring-card {
+  background: #eee;
+  padding: 1.3em;
+  border-top: 4px solid var(--main-color);
+}
+
+.bring-card i {
+  color: var(--main-color);
+  font-size: 2.3em;
+  margin-bottom: 0.3em;
+}
+
+.bring-card h2 {
+  font-size: 1.3em;
+  margin-bottom: 0.3em;
+}
+
+.bring-card p {
+  color: rgb(132, 132, 132);
+}
+
+.bring-card:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.bring-card:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.bring-card:nth-child(4) {
+  transition-delay: 600ms;
+}
+
+/* FOOTER */
+
+.footer {
+  background: rgb(44, 42, 42);
+}
+
+.footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1.5rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+.footer .footer-container .box h3 {
+  color: var(--main-color);
+  font-size: 1.3rem;
+  padding: 1rem 0;
+  padding-top: 2rem;
+}
+
+.footer .footer-container .box a {
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  display: block;
+}
+
+.footer .footer-container .box a i {
+  padding-right: 0.5rem;
+}
+
+.footer .footer-container .box a:hover i {
+  padding-right: 1.2rem;
+  transition: 0.3s;
+}
+
+.copyright {
+  color: #fff;
+  font-size: 0.7rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+/* RESPONSIVENESS */
+
+@media (max-width: 1100px) {
+  .navbar-logo {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 900px) {
+  .menu-toggle {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    display: block;
+    font-size: 2em;
+    cursor: pointer;
+    color: #fff;
+    z-index: 10;
+  }
+
+  .icons i {
+    display: none;
+  }
+
+  .navbar-main-navbar .links-right {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    left: 100%;
+  }
+
+  header.open .links-right {
+    top: 50px;
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+    background: #000;
+    width: 100%;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .icons i {
+    display: none;
+  }
+
+  header.open .links-right a {
+    font-size: 2em;
+  }
+
+  .navbar-dashboard-btn {
+    display: none;
+  }
+
+  .landing-text h1 {
+    font-size: 1.9rem;
+  }
+
+  .landing-desc {
+    font-size: 0.7rem;
+  }
+
+  .process-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bring-cards {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (max-width: 500px) {
+  .landing-text {
+    text-align: center;
+    margin: 1em;
+    margin-top: 13em;
+  }
+
+  .section-heading {
+    font-size: 3em;
+  }
+
+  .bring-cards {
+    grid-template-columns: repeat(1, 250px);
+  }
+}
